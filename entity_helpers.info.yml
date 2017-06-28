@@ -1,0 +1,5 @@
+name: 'Entity Helpers'
+description: 'A collection of utilities used for working with Drupal 8 entities.'
+type: module
+core: 8.x
+version: 8.x-1.x

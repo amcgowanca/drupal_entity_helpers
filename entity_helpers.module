@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * A collection of utilities used for working with Drupal 8 entities.
+ */
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function entity_helpers_field_widget_info_alter(array &$info) {
+  $supported_field_widgets = [
+    'entity_reference_autocomplete',
+    'inline_entity_form_simple'
+  ];
+  foreach ($supported_field_widgets as $field_widget_id) {
+    if (isset($info[$field_widget_id])) {
+      $info[$field_widget_id]['field_types'][] = 'entity_reference_postsave_parent_item';
+    }
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function entity_helpers_field_formatter_info_alter(array &$info) {
+  $supported_field_formatters = [
+    'entity_reference_entity_view',
+    'entity_reference_entity_id',
+    'entity_reference_label',
+  ];
+  foreach ($supported_field_formatters as $field_formatter_id) {
+    if (isset($info[$field_formatter_id])) {
+      $info[$field_formatter_id]['field_types'][] = 'entity_reference_postsave_parent_item';
+    }
+  }
+}

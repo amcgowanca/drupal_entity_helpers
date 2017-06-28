@@ -1,6 +1,6 @@
 ## Entity helpers
 
-A collection of generic helpers available for working with entities in Drupal 8.
+A collection of classes, interfaces and traits that act as utilities for Drupal 8 entity work.
 
 ### License
 
